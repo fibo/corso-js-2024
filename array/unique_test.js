@@ -9,8 +9,8 @@ describe("unique", () => {
 
   test("elimina i doppioni", () => {
     assert.deepEqual(unique([1, 2, 3]), [1, 2, 3]);
-    // assert.deepEqual(unique([1, 2, 2, 3]), [1, 2, 3]);
-    // assert.deepEqual(unique(['a', 1, 'b', 1]), ['a', 1, 'b']);
-    // assert.deepEqual(unique(true, false, true), [true, false])
+    assert.deepEqual(unique([1, 2, 2, 3]), [1, 2, 3]);
+    assert.deepEqual(unique(["a", 1, "b", 1]), ["a", 1, "b"]);
+    assert.deepEqual(unique([true, false, true]), [true, false]);
   });
 });

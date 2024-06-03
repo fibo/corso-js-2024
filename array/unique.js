@@ -6,5 +6,19 @@
  */
 export function unique(list) {
   console.log("ciao, sono unique");
-  return list;
+
+  /*let listaDeduplicata = list.filter((elemento, index, array) => {
+    return array.indexOf(elemento) === index;
+  });*/
+
+  /*let listaDeduplicata = [];
+
+  for (let elemento of list) {
+    if (listaDeduplicata.includes(elemento)) {
+    } else {
+      listaDeduplicata.push(elemento);
+    }
+  }*/
+
+  return Array.from(new Set(list));
 }
