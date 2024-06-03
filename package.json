@@ -7,10 +7,12 @@
   "devDependencies": {
     "lint-staged": "^15.2.5",
     "pre-commit": "^1.2.2",
-    "prettier": "^3.3.0"
+    "prettier": "^3.3.0",
+    "typescript": "^5.4.5"
   },
   "scripts": {
     "hello_world": "node hello_world.js",
+    "version": "node version.js",
     "lint-staged": "lint-staged",
     "prettier": "prettier --write .",
     "prettier--check": "prettier --check .",
