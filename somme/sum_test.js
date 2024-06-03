@@ -7,19 +7,19 @@ describe("sum", () => {
     assert.equal(sum(2, 3), 5);
   });
 
-  //   test("arguments default to 0", () => {
-  //     assert.equal(sum(2), 2);
-  //   });
+  test("arguments default to 0", () => {
+    assert.equal(sum(2), 2);
+  });
 
-  //   test("unexpected parameters", () => {
-  //     assert.equal(sum("a", "b"), 0);
-  //   });
+  test("unexpected parameters", () => {
+    assert.equal(sum("a", "b"), 0);
+  });
 
-  //   test("number coercion", () => {
-  //     assert.equal(sum("1.5", 2), 3.5);
-  //     assert.equal(sum(1, "2.2"), 3.3);
-  //     assert.equal(sum("-1", "-1"), -2);
-  //   });
+  test("number coercion", () => {
+    assert.equal(sum("1.5", 2), 3.5);
+    assert.equal(sum(1, "2.2"), 3.2);
+    assert.equal(sum("-1", "-1"), -2);
+  });
 });
 
 function codiceFiscaleValido(codiceFiscale) {
