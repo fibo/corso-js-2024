@@ -26,7 +26,7 @@ const somma10 = sommaUnNumero(10);
 
 console.log(somma10(5));
 
-function quadrato(num = 0) {
+function quadrato(num) {
   // if (num == undefined) {
   //  num = 0;
   // }

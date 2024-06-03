@@ -16,7 +16,7 @@
     "lint-staged": "lint-staged",
     "prettier": "prettier --write .",
     "prettier--check": "prettier --check .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test"
   },
   "lint-staged": {
     "*.{cjs,css,md,mjs,js,json,jsx,ts,tsx}": [
@@ -24,7 +24,8 @@
     ]
   },
   "pre-commit": [
-    "lint-staged"
+    "lint-staged",
+    "test"
   ],
   "author": "Gianluca Casati (http://fibo.github.io/)",
   "license": "MIT"
