@@ -1,7 +1,7 @@
-"use strict";
 class Animale {
-  nome;
-  constructor(nome) {
+  nome: string;
+
+  constructor(nome: string) {
     if (!nome || typeof nome !== "string") {
       throw new Error("Un animale deve avere un nome! Mi hai passato " + nome);
     }
@@ -9,29 +9,37 @@ class Animale {
   }
   verso() {}
 }
+
+type RazDeCan = "Golden" | "Chiwawa";
+
 class Cane extends Animale {
-  razza;
-  haLaCoda;
-  constructor(nome, razza = undefined) {
+  razza: RazDeCan | undefined;
+  haLaCoda: boolean;
+
+  constructor(nome: string, razza: Cane["razza"] = undefined) {
     super(nome);
     this.razza = razza;
     this.haLaCoda = true;
   }
+
   verso() {
     return "Bau!";
   }
 }
+
 class Gatto extends Animale {
-  constructor(nome) {
+  constructor(nome: string) {
     super(nome);
   }
   verso() {
     return "Miao!";
   }
 }
+
 class Persona extends Animale {
-  animali;
-  constructor(nome, animali = []) {
+  animali: Array<Animale>;
+
+  constructor(nome: string, animali: Array<Animale> = []) {
     super(nome);
     if (!Array.isArray(animali)) {
       throw new Error("Mi devi dare una lista di animali!");
@@ -59,11 +67,13 @@ class Persona extends Animale {
     }
   }
 }
+
 const cane1 = new Cane("Fido", "Chiwawa");
 const cane2 = new Cane("Ugo", "Golden");
 const gatto1 = new Gatto("Pippo");
 const persona1 = new Persona("Alex", [cane1, gatto1]);
 const persona2 = new Persona("Giorgia", [cane2]);
+
 console.log(cane1.nome, cane1.razza, cane1.verso());
 console.log(cane2);
 console.log(gatto1, gatto1.verso());
@@ -73,4 +83,5 @@ console.log(
   cane1 instanceof Cane,
   cane2 instanceof Gatto,
 );
+
 persona1.richiamoAnimali();

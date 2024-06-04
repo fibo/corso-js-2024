@@ -19,7 +19,9 @@
     "prettier": "prettier --write .",
     "prettier--check": "prettier --check .",
     "test": "node --test",
-    "compile": "tsc --project ./tsconfig.json"
+    "compile": "tsc --project ./tsconfig.json",
+    "check_types": "tsc --noEmit --project ./tsconfig.json",
+    "info_pacchetto": "node oggetti/info_pacchetto.cjs"
   },
   "lint-staged": {
     "*.{cjs,css,md,mjs,js,json,jsx,ts,tsx}": [
@@ -28,6 +30,7 @@
   },
   "pre-commit": [
     "lint-staged",
+    "check_types",
     "test"
   ],
   "author": "Gianluca Casati (http://fibo.github.io/)",

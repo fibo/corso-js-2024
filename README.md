@@ -10,7 +10,9 @@ Fai partire i test con `npm test`.
 - Hello World: `npm run hello_world` (CTRL-C per stoppare il server)
 - Version: `npm run version`, qui usa `process` il global di Node.js
 - Pagina HTML con esempi sugli array: `npm run pagina_array`
+- Esempio di uso oggetti in CommonJS: `npm run info_pacchetto`
 
 ## TypeScript
 
 Per compilare i sorgenti .ts, usare `npm run compile`.
+Per controllare il "typing", lancia `npm run check_types`
