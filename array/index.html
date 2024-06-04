@@ -8,14 +8,14 @@
   </head>
   <body>
     <h1>Esempio con array</h1>
-    <form>
+    <div class="input">
       <label>Array di numeri</label>
-      <input type="text" placeholder="1,2,3,4,5" />
-      <button>unique</button>
-    </form>
-    <div>
+      <input id="lista" type="text" placeholder="es. 1 2 3 4 5" />
+      <button data-testid="conversione" id="unique">unique</button>
+    </div>
+    <div class="risultato">
       <span>Risultato</span>
-      <pre><code>1,2,4</code></pre>
+      <pre><code id="output">es. 1 2 4</code></pre>
     </div>
     <script type="module" src="./app.js"></script>
   </body>
