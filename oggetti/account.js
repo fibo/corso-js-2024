@@ -78,3 +78,4 @@ for (let account of accounts) {
 
 console.log(contaLocation);
 console.log("l'eta media è:", media(ages));
+console.log(JSON.stringify(account1, null, 6));
