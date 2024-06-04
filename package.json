@@ -18,7 +18,8 @@
     "lint-staged": "lint-staged",
     "prettier": "prettier --write .",
     "prettier--check": "prettier --check .",
-    "test": "node --test"
+    "test": "node --test",
+    "compile": "tsc --project ./tsconfig.json"
   },
   "lint-staged": {
     "*.{cjs,css,md,mjs,js,json,jsx,ts,tsx}": [
