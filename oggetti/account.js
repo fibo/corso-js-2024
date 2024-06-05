@@ -30,6 +30,7 @@ console.log(account1);
 console.log(account2);
 
 const contaLocation = {};
+const contaLocationMap = new Map();
 
 /**
  * normalizza le location
@@ -66,16 +67,22 @@ console.log(media([10, 20, 30]));
 const accounts = [account1, account2, account3];
 for (let account of accounts) {
   const location = normalizeLocation(account.location);
-  const numero = contaLocation[location];
+
+  // const numero = contaLocation[location];
+  const numero = contaLocationMap.get(location);
+
   if (typeof numero == "undefined") {
-    contaLocation[location] = 1;
+    contaLocationMap.set(location, 1);
+    // contaLocation[location] = 1;
   } else {
-    contaLocation[location] = numero + 1;
+    // contaLocation[location] = numero + 1;
+    contaLocationMap.set(location, numero + 1);
   }
 
   ages.push(account.age);
 }
 
-console.log(contaLocation);
+// console.log(contaLocation);
+console.log(contaLocationMap.entries());
 console.log("l'eta media è:", media(ages));
 console.log(JSON.stringify(account1, null, 6));
