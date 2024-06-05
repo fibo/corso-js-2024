@@ -19,5 +19,5 @@ form.addEventListener("submit", onSubmit);
 const linkGoogle = document.querySelector("a");
 linkGoogle.onclick = (event) => {
   event.preventDefault();
-  window.alert("Ti Avevo Detto Di Non Cliccare!");
+  window.alert("Ti Avevo Detto Di Non Cliccarmi!");
 };
