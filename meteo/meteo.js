@@ -12,7 +12,7 @@ async function getMeteo() {
 
     if (response.ok) {
       const json = await response.json();
-      console.log(response.status, json);
+      return json;
     } else {
       throw new Error(response.status);
     }
@@ -21,4 +21,22 @@ async function getMeteo() {
   }
 }
 
-getMeteo();
+const data = await getMeteo();
+
+const container = document.createElement("ul");
+container.classList.add("container");
+container.style.padding = "1em";
+document.body.appendChild(container);
+
+for (let { city, temperature } of data) {
+  const element = document.createElement("li");
+  element.innerHTML = `
+  <strong>
+  ${city}
+  </strong> 
+  ${temperature}
+  `;
+  container.appendChild(element);
+}
+
+console.log(data);
