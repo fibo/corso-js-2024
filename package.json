@@ -23,7 +23,8 @@
     "check_types": "tsc --noEmit --project ./tsconfig.json",
     "info_pacchetto": "node oggetti/info_pacchetto.cjs",
     "api": "json-server db.json",
-    "pagina_meteo": "serve -p 4000 -d meteo"
+    "pagina_meteo": "serve -p 4000 -d meteo",
+    "pagina_login": "serve -p 4000 -d LoginForm"
   },
   "lint-staged": {
     "*.{cjs,css,md,mjs,js,json,jsx,ts,tsx}": [
