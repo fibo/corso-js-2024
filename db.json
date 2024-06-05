@@ -1,0 +1,16 @@
+{
+  "meteo": [
+    {
+      "city": "Milano",
+      "temperature": 22
+    },
+    {
+      "city": "Roma",
+      "temperature": 26
+    },
+    {
+      "city": "Torino",
+      "temperature": 22
+    }
+  ]
+}

@@ -21,7 +21,9 @@
     "test": "node --test",
     "compile": "tsc --project ./tsconfig.json",
     "check_types": "tsc --noEmit --project ./tsconfig.json",
-    "info_pacchetto": "node oggetti/info_pacchetto.cjs"
+    "info_pacchetto": "node oggetti/info_pacchetto.cjs",
+    "api": "json-server db.json",
+    "pagina_meteo": "serve -p 4000 -d meteo"
   },
   "lint-staged": {
     "*.{cjs,css,md,mjs,js,json,jsx,ts,tsx}": [
@@ -34,5 +36,8 @@
     "test"
   ],
   "author": "Gianluca Casati (http://fibo.github.io/)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "json-server": "^1.0.0-beta.1"
+  }
 }

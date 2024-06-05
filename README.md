@@ -11,6 +11,9 @@ Fai partire i test con `npm test`.
 - Version: `npm run version`, qui usa `process` il global di Node.js
 - Pagina HTML con esempi sugli array: `npm run pagina_array`
 - Esempio di uso oggetti in CommonJS: `npm run info_pacchetto`
+- Per far partire l'api dell'esempio meteo:
+  - `npm run api`
+  - `npm run pagina_meteo`
 
 ## TypeScript
 
