@@ -9,7 +9,25 @@ const onSubmit = (event) => {
   fetch("http://localhost:3000", {
     method: "POST",
     body: JSON.stringify({ email, password }),
-  });
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        console.error(response.status);
+      }
+    })
+    .then((data) => {
+      console.log(data);
+      // qua l'utente è loggato,
+      // ad esempio si potrebbe redirigere alla homepage
+    })
+    .catch((error) => {
+      console.error(error);
+    })
+    .finally(() => {
+      console.log("ok");
+    });
 };
 
 //form.onsubmit = onSubmit;

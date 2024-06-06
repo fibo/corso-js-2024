@@ -14,6 +14,7 @@ Fai partire i test con `npm test`.
 - Per far partire l'api dell'esempio meteo:
   - `npm run api`
   - `npm run pagina_meteo`
+- Pagina di login: `npm run pagina_login`
 
 ## TypeScript
 
