@@ -23,11 +23,33 @@ function initBarChart(element) {
   chart.setOption(option);
   return chart;
 }
-addEventListener("load", (event) => {
+
+async function getRevenues() {
+  try {
+    const url = "http://localhost:3000/revenues";
+    const response = await fetch(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const json = await response.json();
+    return response.json();
+  } catch (error) {
+    console.error(error);
+    return {
+      categories: [],
+      values: [],
+    };
+  }
+}
+
+async function onLoad() {
   const myChart = initBarChart(document.getElementById("main"));
   if (!myChart) return;
-  const categories = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-  const values = [120, 200, 150, 80, 70, 110, 130];
+  const { categories, values } = await getRevenues();
   const option = barChartOption(categories, values);
   myChart.setOption(option);
-});
+}
+
+addEventListener("load", onLoad);
