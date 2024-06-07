@@ -1,4 +1,26 @@
-function barChartOption(categories = [], values = []) {
+const from = document.querySelector("input[name=from]");
+const to = document.querySelector("input[name=to]");
+const form = document.querySelector("form");
+let revenues = { categories: [], values: [] };
+form.onsubmit = update;
+const min = "2024-01-01";
+const max = "2024-01-31";
+from.min = min;
+from.max = max;
+to.min = min;
+to.max = max;
+from.value = "2024-01-01";
+to.value = "2024-01-10";
+
+function update(event) {
+  event.preventDefault();
+  const from = event.target.from.value;
+  const to = event.target.to.value;
+
+  console.log(from, to);
+}
+
+function barChartOption({ categories = [], values = [] } = {}) {
   return {
     xAxis: {
       type: "category",
@@ -33,7 +55,7 @@ async function getRevenues() {
         "Content-Type": "application/json",
       },
     });
-    const json = await response.json();
+
     return response.json();
   } catch (error) {
     console.error(error);
@@ -47,8 +69,9 @@ async function getRevenues() {
 async function onLoad() {
   const myChart = initBarChart(document.getElementById("main"));
   if (!myChart) return;
-  const { categories, values } = await getRevenues();
-  const option = barChartOption(categories, values);
+  revenues = await getRevenues();
+  console.log(revenues);
+  const option = barChartOption(revenues);
   myChart.setOption(option);
 }
 
